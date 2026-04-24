@@ -1,13 +1,14 @@
+package Main;
 
 public class Carrera {
     private String nombre;
-    private String escuela;
+    private Escuela escuela;
 
-    public Carrera(String nombre, String escuela) {
+    public Carrera(String nombre, Escuela escuela) {
         this.nombre = nombre;
         this.escuela = escuela;
     }
 
     public String getNombre() { return nombre; }
-    public String getEscuela() { return escuela; }
+    public Escuela getEscuela() { return escuela; }
 }
