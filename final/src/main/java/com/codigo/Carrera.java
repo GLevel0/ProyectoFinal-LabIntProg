@@ -1,4 +1,4 @@
-package Main;
+package com.codigo;
 
 public class Carrera {
     private String nombre;
