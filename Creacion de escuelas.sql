@@ -1,0 +1,1 @@
+INSERT INTO Escuelas(nombre) VALUES('Ingeniería'),('Negocios'),('Artes'),('Salud');
