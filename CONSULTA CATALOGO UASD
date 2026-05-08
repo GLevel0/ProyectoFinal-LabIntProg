@@ -1,1 +1,78 @@
+import java.util.*;
 
+public class CatalogoUASD {
+    public static void main(String[] args) {
+        // Catálogo de carreras por facultad
+        Map<String, List<String>> catalogo = new HashMap<>();
+
+        catalogo.put("Facultad de Ciencias", Arrays.asList(
+                "Licenciatura en Matemática",
+                "Licenciatura en Física",
+                "Licenciatura en Química"
+        ));
+
+        catalogo.put("Facultad de Ingeniería y Arquitectura", Arrays.asList(
+                "Ingeniería Civil",
+                "Ingeniería Industrial",
+                "Arquitectura"
+        ));
+
+        catalogo.put("Facultad de Ciencias Económicas y Sociales", Arrays.asList(
+                "Administración de Empresas",
+                "Contabilidad",
+                "Economía"
+        ));
+
+        catalogo.put("Facultad de Humanidades", Arrays.asList(
+                "Licenciatura en Filosofía",
+                "Licenciatura en Historia",
+                "Licenciatura en Letras"
+        ));
+
+        Scanner sc = new Scanner(System.in);
+        int opcion;
+
+        do {
+            System.out.println("\n=== Catálogo de Carreras UASD ===");
+            System.out.println("1. Ver todas las facultades");
+            System.out.println("2. Consultar carreras por facultad");
+            System.out.println("3. Salir");
+            System.out.print("Seleccione una opción: ");
+            opcion = sc.nextInt();
+            sc.nextLine(); // limpiar buffer
+
+            switch (opcion) {
+                case 1:
+                    System.out.println("\nFacultades disponibles:");
+                    for (String facultad : catalogo.keySet()) {
+                        System.out.println("- " + facultad);
+                    }
+                    break;
+
+                case 2:
+                    System.out.print("\nIngrese el nombre de la facultad: ");
+                    String facultad = sc.nextLine();
+                    List<String> carreras = catalogo.get(facultad);
+
+                    if (carreras != null) {
+                        System.out.println("\nCarreras ofertadas en " + facultad + ":");
+                        for (String carrera : carreras) {
+                            System.out.println("• " + carrera);
+                        }
+                    } else {
+                        System.out.println(" Facultad no encontrada. Verifique el nombre.");
+                    }
+                    break;
+
+                case 3:
+                    System.out.println("¡Gracias por usar el sistema!");
+                    break;
+
+                default:
+                    System.out.println("⚠ Opción inválida. Intente de nuevo.");
+            }
+        } while (opcion != 3);
+
+        sc.close();
+    }
+}
