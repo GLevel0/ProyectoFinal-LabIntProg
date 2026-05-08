@@ -9,26 +9,9 @@ public class App {
     public static ArrayList<Escuela> Escuelas = new ArrayList<Escuela>();
     public static void main(String[] args) 
     {
-        Connection conexion = conectarBaseDatos();
-        //Comprueba que la conexion fue exitosa antes de continuar, sino, no ejecuta el programa.
-		if (conexion == null) {
-			System.out.println("Conexión fallida a la base de datos.");
-			return;
-		}
-
-		try {
-            //Se crea el formulario y se le pasa la conexion para que pueda usarla en sus metodos.
-            FormularioCarreras formulario = new FormularioCarreras();
-            formulario.setVisible(true);
-            
-            //Cierra la conexion al cerrar la aplicacion
-			conexion.close();	
-		} catch (SQLException e) {
-			System.out.println("Error al leer los datos de la base de datos: " + e.getMessage());
-			e.printStackTrace();
-		}
-
-        //Crear el metodo para agregar cada carrera a nuestra escuela.
+        //Se crea el formulario y se le pasa la conexion para que pueda usarla en sus metodos.
+        FormularioCarreras formulario = new FormularioCarreras();
+        formulario.setVisible(true);
     }
 
     public static void cargarEscuelas(JComboBox<String> comboEscuelas) {
@@ -47,6 +30,9 @@ public class App {
                 Escuelas.add(escuela);
                 comboEscuelas.addItem(Nombre);
             }
+            conexion.close();
+            st.close();
+            rs.close();
 
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null,
@@ -77,7 +63,7 @@ public class App {
 
             st.close();
             rs.close();
-
+            conexion.close();
         } catch (Exception e) {
             e.printStackTrace();
             JOptionPane.showMessageDialog(null,"Error en la consulta");
