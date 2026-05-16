@@ -11,6 +11,7 @@ Para poder acceder a los datos del mismo tendra que utilizar :
 Los pasos para correr el programa son aun mas simples :
 -Ir a la carpeta del proyecto
 -Hacer click derecho para que le permita abrir la terminal
+
 <img width="592" height="350" alt="image" src="https://github.com/user-attachments/assets/1249e6df-11e2-45de-91f5-0d765dec93a0" />
 -Luego en la terminal escribir el siguiente comando :
 -java -jar .\ProyectoFinal-LabIntProg.jar
