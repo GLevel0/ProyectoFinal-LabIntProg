@@ -10,6 +10,10 @@ Grupo 2 - Código 0
 
 <ul>
   <li>Java 21 o superior</li>
+  <li>Clonar el proyecto en su computadora <img width="850" height="466" alt="image" src="https://github.com/user-attachments/assets/25118633-d6b0-4bb2-a9bf-e0be0383557e" />
+  
+    y obviamente extraerlo.
+  </li>
 </ul>
 
 <p>
